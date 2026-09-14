@@ -1,0 +1,6 @@
+{
+  "crons": [
+    { "path": "/api/reports/cron?kind=week", "schedule": "0 17 * * 0" },
+    { "path": "/api/reports/cron?kind=month", "schedule": "0 7 1 * *" }
+  ]
+}

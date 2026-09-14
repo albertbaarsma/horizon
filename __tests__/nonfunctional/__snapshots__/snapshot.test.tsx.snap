@@ -1,0 +1,206 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MailTab snapshots > error state matches snapshot 1`] = `
+<div>
+  <div
+    style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px; gap: 12px; color: rgb(100, 116, 139);"
+  >
+    <div
+      style="font-size: 32px;"
+    >
+      📭
+    </div>
+    <div
+      style="font-size: 14px; font-weight: 600; color: rgb(248, 81, 73);"
+    >
+      Fout bij ophalen mails
+    </div>
+    <div
+      style="font-size: 12px; max-width: 320px; text-align: center;"
+    >
+      Google niet verbonden
+    </div>
+    <a
+      href="/login"
+      style="font-size: 12px; padding: 7px 16px; background: rgb(99, 102, 241); color: rgb(255, 255, 255); border-radius: 6px; text-decoration: none; font-weight: 600;"
+    >
+      Opnieuw verbinden met Google
+    </a>
+  </div>
+</div>
+`;
+
+exports[`MailTab snapshots > loading state matches snapshot 1`] = `
+<div>
+  <div
+    style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px; gap: 16px; color: rgb(100, 116, 139);"
+  >
+    <div
+      style="font-size: 32px;"
+    >
+      ✉️
+    </div>
+    <div
+      style="font-size: 13px;"
+    >
+      Mails ophalen en analyseren…
+    </div>
+    <div
+      style="font-size: 11px; color: rgb(55, 65, 81);"
+    >
+      AI leest je inbox
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MailTab snapshots > mail list state matches snapshot 1`] = `
+<div>
+  <div
+    style="max-width: 720px;"
+  >
+    <div
+      style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;"
+    >
+      <h2
+        style="font-size: 14px; font-weight: 700; color: rgb(226, 232, 240); margin: 0px;"
+      >
+        ✉️ Inbox (
+        2
+         ongelezen)
+      </h2>
+      <div
+        style="margin-left: auto; display: flex; gap: 6px; align-items: center; flex-wrap: wrap;"
+      >
+        <button
+          style="font-size: 11px; padding: 4px 10px; border-radius: 5px; cursor: pointer; background: rgba(99, 102, 241, 0.25); border: 1px solid rgba(99, 102, 241, 0.5); color: rgb(129, 140, 248);"
+        >
+          Alles (2)
+        </button>
+        <button
+          style="font-size: 11px; padding: 4px 10px; border-radius: 5px; cursor: pointer; background: transparent; border: 1px solid rgba(255, 255, 255, 0.1); color: rgb(100, 116, 139);"
+        >
+          ⚡ Actie (1)
+        </button>
+        <button
+          style="font-size: 11px; padding: 4px 10px; border-radius: 5px; cursor: pointer; background: transparent; border: 1px solid rgba(255, 255, 255, 0.1); color: rgb(100, 116, 139);"
+        >
+          🔴 Urgent (1)
+        </button>
+        <button
+          style="font-size: 11px; padding: 4px 10px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.1); background: transparent; color: rgb(100, 116, 139); cursor: pointer;"
+        >
+          ↻ Verversen
+        </button>
+      </div>
+    </div>
+    <div
+      style="display: flex; flex-direction: column; gap: 8px;"
+    >
+      <div
+        style="background: rgba(255, 255, 255, 0.035); border-top: 1px solid rgba(255, 255, 255, 0.07); border-right: 1px solid rgba(255, 255, 255, 0.07); border-bottom: 1px solid rgba(255, 255, 255, 0.07); border-left: 3px solid rgb(248, 81, 73); border-radius: 9px; overflow: hidden; transition: all .15s;"
+      >
+        <div
+          style="display: flex; align-items: center; gap: 10px; padding: 11px 14px; cursor: pointer;"
+        >
+          <span
+            style="font-size: 14px; flex-shrink: 0;"
+            title="werk"
+          >
+            💼
+          </span>
+          <div
+            style="flex: 1 1 0%; min-width: 0px;"
+          >
+            <div
+              style="font-size: 12px; font-weight: 600; color: rgb(226, 232, 240); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+            >
+              Offerte gevraagd
+            </div>
+            <div
+              style="font-size: 11px; color: rgb(100, 116, 139); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+            >
+              Klant
+               · 
+              1 jul
+            </div>
+          </div>
+          <div
+            style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;"
+          >
+            <span
+              style="font-size: 9px; font-weight: 700; color: rgb(245, 158, 11); border: 1px solid rgba(245, 158, 11, 0.3); padding: 2px 5px; border-radius: 3px;"
+            >
+              ACTIE
+            </span>
+            <span
+              style="font-size: 10px; color: rgb(248, 81, 73);"
+            >
+              🔴
+            </span>
+            <span
+              style="color: rgb(55, 65, 81); font-size: 12px;"
+            >
+              ▼
+            </span>
+          </div>
+        </div>
+        <div
+          style="padding: 0px 14px 10px 38px; font-size: 11px; color: rgb(100, 116, 139); line-height: 1.5;"
+        >
+          Klant vraagt om offerte
+        </div>
+      </div>
+      <div
+        style="background: rgba(255, 255, 255, 0.035); border-top: 1px solid rgba(255, 255, 255, 0.07); border-right: 1px solid rgba(255, 255, 255, 0.07); border-bottom: 1px solid rgba(255, 255, 255, 0.07); border-left: 3px solid rgb(72, 79, 88); border-radius: 9px; overflow: hidden; transition: all .15s;"
+      >
+        <div
+          style="display: flex; align-items: center; gap: 10px; padding: 11px 14px; cursor: pointer;"
+        >
+          <span
+            style="font-size: 14px; flex-shrink: 0;"
+            title="nieuwsbrief"
+          >
+            📰
+          </span>
+          <div
+            style="flex: 1 1 0%; min-width: 0px;"
+          >
+            <div
+              style="font-size: 12px; font-weight: 600; color: rgb(226, 232, 240); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+            >
+              Nieuwsbrief
+            </div>
+            <div
+              style="font-size: 11px; color: rgb(100, 116, 139); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+            >
+              Bar News
+               · 
+              30 jun
+            </div>
+          </div>
+          <div
+            style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;"
+          >
+            <span
+              style="font-size: 10px; color: rgb(72, 79, 88);"
+            >
+              ⚪
+            </span>
+            <span
+              style="color: rgb(55, 65, 81); font-size: 12px;"
+            >
+              ▼
+            </span>
+          </div>
+        </div>
+        <div
+          style="padding: 0px 14px 10px 38px; font-size: 11px; color: rgb(100, 116, 139); line-height: 1.5;"
+        >
+          Reclame
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
