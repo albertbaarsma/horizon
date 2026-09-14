@@ -2,12 +2,18 @@
   "name": "horizon",
   "version": "0.1.0",
   "private": true,
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albertbaarsma/horizon.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "setup-db": "node scripts/setup-db.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

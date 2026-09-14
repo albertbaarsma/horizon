@@ -72,7 +72,7 @@ export async function GET(req: NextRequest) {
 
     const vevent = [
       'BEGIN:VEVENT',
-      `UID:albert-os-week-${item.id}@personal`,
+      `UID:horizon-week-${item.id}@personal`,
       `DTSTART;VALUE=DATE:${toICSDate(item.date)}`,
       `DTEND;VALUE=DATE:${toICSDate(item.date)}`,
       `SUMMARY:${escapeICS(summary)}`,
@@ -103,7 +103,7 @@ export async function GET(req: NextRequest) {
         if (!alreadyCovered && !explicitlySkipped) {
           lines.push(
             'BEGIN:VEVENT',
-            `UID:albert-os-recur-${rt.id}-${dateStr}@personal`,
+            `UID:horizon-recur-${rt.id}-${dateStr}@personal`,
             `DTSTART;VALUE=DATE:${toICSDate(dateStr)}`,
             `DTEND;VALUE=DATE:${toICSDate(dateStr)}`,
             `SUMMARY:${escapeICS(`${emoji} ${rt.name}`)}`,
@@ -125,7 +125,7 @@ export async function GET(req: NextRequest) {
   return new NextResponse(body, {
     headers: {
       'Content-Type': 'text/calendar; charset=utf-8',
-      'Content-Disposition': 'attachment; filename="albert-os.ics"',
+      'Content-Disposition': 'attachment; filename="horizon.ics"',
       'Cache-Control': 'no-cache, no-store',
     },
   })

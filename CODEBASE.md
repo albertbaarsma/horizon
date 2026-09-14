@@ -42,7 +42,7 @@ horizon/
 │   │   │   ├── projects/route.ts       # GET — categories + projects, so a caller can pick the right proj_id for a task's category (tasks have no direct cat_id)
 │   │   │   ├── xp/route.ts             # GET
 │   │   │   └── suggest-actions/route.ts
-│   │   ├── mcp/                    # ★ Hosted MCP server (mcp-handler + lib/mcp-server.ts) — same 11 tools as the separate albert-os-mcp stdio repo, but in-process against lib/ai-tools.ts (no self-HTTP round-trip)
+│   │   ├── mcp/                    # ★ Hosted MCP server (mcp-handler + lib/mcp-server.ts) — same 11 tools as the separate horizon-mcp stdio repo, but in-process against lib/ai-tools.ts (no self-HTTP round-trip)
 │   │   │   ├── route.ts                # Header auth (Authorization: Bearer <token>) — for Claude Code / scripts that can set custom headers
 │   │   │   └── [token]/route.ts        # Path auth — for Claude Desktop/claude.ai's "Add custom connector" UI, which has no header field; the connector URL itself carries the token
 │   │   ├── achievements/parse/     # POST — AI parses pasted weekly notes → achievements
@@ -267,7 +267,7 @@ The external surface (`app/api/ai/*` REST routes and the hosted MCP server at `a
 1. Add the DB-facing function to `lib/ai-tools.ts` — `(userId, ...args) => data`, throws a plain `Error` on failure (no `NextResponse` in here).
 2. If it needs its own REST route, add a thin `app/api/ai/[name]/route.ts`: extract token via `lib/ai-api-auth.ts` → call the new function → `NextResponse.json(...)`, catching the thrown Error into the right status code.
 3. Register it as an MCP tool in `lib/mcp-server.ts`'s `buildMcpHandler`: `server.registerTool(name, { description, inputSchema: {...zod shape...} }, async (args) => { try { return ok(await tools.yourFn(userId, args)) } catch (e) { return fout(e) } })`. `inputSchema` is a raw Zod shape object, not `z.object(...)`.
-4. Keep the tool name/description/args in sync with the local stdio `albert-os-mcp` sibling repo's `index.ts` if it still exists as a secondary path — it proxies the same REST routes over `fetch`.
+4. Keep the tool name/description/args in sync with the local stdio `horizon-mcp` sibling repo's `index.ts` if it still exists as a secondary path — it proxies the same REST routes over `fetch`.
 
 ### Adding a new Horizon AI tool
 

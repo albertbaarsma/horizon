@@ -260,6 +260,7 @@ export function LandingShell({ children, smal = false, lang = 'nl', path = '/' }
             </span>
             <Link href="/updates" className="lp-nav-link">{t.updates}</Link>
             <Link href="/over" className="lp-nav-link">{t.over}</Link>
+            <Link href="/rpm" className="lp-nav-link">{t.rpm}</Link>
             <Link href="/login" className="lp-btn lp-btn-stil lp-btn-klein">{t.inloggen}</Link>
             <Link href="/signup" className="lp-btn lp-btn-primair lp-btn-klein">{t.account}</Link>
           </nav>

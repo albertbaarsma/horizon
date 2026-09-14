@@ -1,4 +1,4 @@
-// De gehoste MCP-server: dezelfde 11 tools als de lokale albert-os-mcp-stdio-
+// De gehoste MCP-server: dezelfde 11 tools als de lokale horizon-mcp-stdio-
 // server, maar hier direct in-process tegen lib/ai-tools.ts (geen eigen
 // fetch-rondje naar onze eigen REST-API nodig, dat script proxyde alleen omdat
 // het los van deze app draait). `buildMcpHandler` wordt per request opnieuw
@@ -130,5 +130,5 @@ export function buildMcpHandler(userId: string) {
     }, async () => {
       try { return ok(await tools.getXpStatus(userId)) } catch (e) { return fout(e) }
     })
-  }, { serverInfo: { name: 'albert-os', version: '1.0.0' } })
+  }, { serverInfo: { name: 'horizon', version: '1.0.0' } })
 }

@@ -85,6 +85,21 @@ export default function LandingPage({ lang = 'en' }: { lang?: Lang }) {
 
       <div className="lp-streep" />
 
+      {/* ── RPM-credit ──────────────────────────────────────────────────── */}
+      <section className="lp-sectie">
+        <div className="lp-label">{t.rpm.label}</div>
+        <h2 className="lp-h2">{t.rpm.h2}</h2>
+        <p className="lp-intro">{t.rpm.intro}</p>
+        <div className="lp-glas" style={{ padding: 20, maxWidth: 640 }}>
+          <p className="lp-tekst" style={{ margin: 0 }}>{t.rpm.credit}</p>
+        </div>
+        <p className="lp-intro" style={{ marginTop: 14, marginBottom: 0 }}>
+          <Link href="/rpm">{t.rpm.link}</Link>
+        </p>
+      </section>
+
+      <div className="lp-streep" />
+
       {/* ── AI koppelen ─────────────────────────────────────────────────── */}
       <section className="lp-sectie">
         <div className="lp-ai">

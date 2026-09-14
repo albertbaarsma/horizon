@@ -49,7 +49,7 @@ export default function AiSetupClient({ token, lang, origin, initialPad }: { tok
   }
 
   const connectorUrl = `${origin}/api/mcp/${token}`
-  const codeCommand = `claude mcp add --transport http albert-os ${origin}/api/mcp --header "Authorization: Bearer ${token}"`
+  const codeCommand = `claude mcp add --transport http horizon ${origin}/api/mcp --header "Authorization: Bearer ${token}"`
 
   const PADEN: { key: Pad; label: string }[] = [
     { key: 'desktop', label: t.paden.desktop },

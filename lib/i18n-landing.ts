@@ -25,6 +25,7 @@ interface LandingContent {
   }
   sectie1: { label: string; h2: string; intro: string }
   functies: Kaart[]
+  rpm: { label: string; h2: string; intro: string; credit: string; link: string }
   ai: {
     label: string; h2: string; intro: string
     bubbelJij: string; bubbelAi: string; bubbelDoen: [string, string]
@@ -36,7 +37,7 @@ interface LandingContent {
   stappenSectie: { label: string; h2: string; intro: string }
   stappen: { titel: string; tekst: string }[]
   slot: { h2: string; intro: string; beginnen: string; inloggen: string }
-  nav: { updates: string; over: string; inloggen: string; account: string }
+  nav: { updates: string; over: string; rpm: string; inloggen: string; account: string }
   voet: (naam: string) => string
 }
 
@@ -85,6 +86,13 @@ export const LANDING: Record<Lang, LandingContent> = {
       { emoji: '🧭', titel: 'Wekelijkse plansessie',
         tekst: 'Eén begeleide ronde per week: terug naar je visie, prestaties vieren, en van daaruit je week neerzetten.' },
     ],
+    rpm: {
+      label: 'De methode',
+      h2: 'Gebouwd op RPM, niet een kopie ervan.',
+      intro: 'Horizon volgt de RPM-methode (Rapid Planning Method) van Tony Robbins: begin bij je ultieme visie, werk terug naar wat dat vraagt, en laat je takenlijst daaruit volgen — in plaats van andersom.',
+      credit: 'Horizon is een eigen, onafhankelijke implementatie van dat idee in software — niet gemaakt door, goedgekeurd door of verbonden aan Tony Robbins of Robbins Research International.',
+      link: 'Lees hoe RPM werkt →',
+    },
     ai: {
       label: 'Je tweede brein',
       h2: 'Koppel je AI en praat gewoon tegen je planning.',
@@ -138,7 +146,7 @@ export const LANDING: Record<Lang, LandingContent> = {
       beginnen: 'Beginnen',
       inloggen: 'Inloggen',
     },
-    nav: { updates: 'Updates', over: 'Over', inloggen: 'Inloggen', account: 'Account maken' },
+    nav: { updates: 'Updates', over: 'Over', rpm: 'RPM', inloggen: 'Inloggen', account: 'Account maken' },
     voet: naam => `⚡ Horizon — gratis alpha, gebouwd door ${naam}`,
   },
   en: {
@@ -178,6 +186,13 @@ export const LANDING: Record<Lang, LandingContent> = {
       { emoji: '🧭', titel: 'Weekly planning session',
         tekst: 'One guided round per week: back to your vision, celebrate wins, and lay out your week from there.' },
     ],
+    rpm: {
+      label: 'The method',
+      h2: 'Built on RPM, not a copy of it.',
+      intro: 'Horizon follows the RPM method (Rapid Planning Method) developed by Tony Robbins: start from your ultimate vision, work backward to what that requires, and let your task list follow from that — instead of the other way around.',
+      credit: 'Horizon is an independent, unofficial implementation of that idea in software — it is not made by, endorsed by, or affiliated with Tony Robbins or Robbins Research International.',
+      link: 'Read how RPM works →',
+    },
     ai: {
       label: 'Your second brain',
       h2: 'Connect your AI and just talk to your planning.',
@@ -231,7 +246,7 @@ export const LANDING: Record<Lang, LandingContent> = {
       beginnen: 'Get started',
       inloggen: 'Log in',
     },
-    nav: { updates: 'Updates', over: 'About', inloggen: 'Log in', account: 'Sign up' },
+    nav: { updates: 'Updates', over: 'About', rpm: 'RPM', inloggen: 'Log in', account: 'Sign up' },
     voet: naam => `⚡ Horizon — free alpha, built by ${naam}`,
   },
 }

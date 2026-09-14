@@ -2,7 +2,7 @@ import { getUserIdFromToken } from '@/lib/ai-api-auth'
 import { buildMcpHandler } from '@/lib/mcp-server'
 
 // Voor clients die een custom header kunnen zetten (Claude Code, eigen
-// scripts): `claude mcp add --transport http albert-os <url> --header
+// scripts): `claude mcp add --transport http horizon <url> --header
 // "Authorization: Bearer <token>"`. Zie app/api/mcp/[token] voor Claude
 // Desktop/claude.ai, waar de custom-connector-UI geen headerveld heeft.
 function getAuthHeader(req: Request): string | null {

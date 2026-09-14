@@ -25,6 +25,7 @@ const LandingPage  = (await import('@/app/LandingPage')).default
 const Home         = (await import('@/app/page')).default
 const UpdatesPage  = (await import('@/app/updates/page')).default
 const OverPage     = (await import('@/app/over/page')).default
+const RpmPage      = (await import('@/app/rpm/page')).default
 
 describe('/ — wie krijgt wat te zien', () => {
   it('stuurt een ingelogde bezoeker door naar het dashboard', async () => {
@@ -218,12 +219,25 @@ describe('Over — eigen pagina', () => {
     expect(screen.getByText(/back-up van wat je niet kwijt wil/i)).toBeTruthy()
   })
 
+  it('linkt door naar de RPM-pagina', () => {
+    const paden = screen.getAllByRole('link').map(a => a.getAttribute('href'))
+    expect(paden).toContain('/rpm')
+  })
+})
+
+describe('RPM — eigen pagina', () => {
+  beforeEach(async () => { render(await RpmPage()) })
+
   it('legt RPM uit en noemt Tony Robbins', () => {
     expect(screen.getAllByText(/Tony Robbins/).length).toBeGreaterThan(0)
     expect(screen.getByText(/Rapid Planning Method/)).toBeTruthy()
     expect(screen.getAllByText('Result').length).toBeGreaterThan(0)
     expect(screen.getAllByText('Purpose').length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Massive Action Plan/).length).toBeGreaterThan(0)
+  })
+
+  it('maakt duidelijk dat dit geen officieel Tony Robbins-product is', () => {
+    expect(screen.getByText(/niet gemaakt door, goedgekeurd door of verbonden aan/i)).toBeTruthy()
   })
 
   it('geeft instructies voor het schrijven van een ultieme visie', () => {
@@ -245,11 +259,12 @@ describe('Over — eigen pagina', () => {
 })
 
 describe('Beide pagina’s zijn alleen via de balk bovenin te vinden', () => {
-  it('de landingspagina linkt naar /updates en /over', () => {
+  it('de landingspagina linkt naar /updates, /over en /rpm', () => {
     render(<LandingPage />)
     const paden = screen.getAllByRole('link').map(a => a.getAttribute('href'))
     expect(paden.filter(p => p === '/updates')).toHaveLength(1)
     expect(paden.filter(p => p === '/over')).toHaveLength(1)
+    expect(paden.filter(p => p === '/rpm').length).toBeGreaterThanOrEqual(1)
   })
 
   it('en beide pagina’s linken terug naar huis', async () => {
