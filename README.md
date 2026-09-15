@@ -11,6 +11,26 @@ Horizon is an independent implementation of ideas from RPM. It is not made by, e
 affiliated with Tony Robbins or Robbins Research International — see [`/rpm`](app/rpm/page.tsx)
 in the app once running, for the full explanation and credit.
 
+## Platform & requirements
+
+Built and used day to day on **Windows** — a regular desktop (Windows 11 Home, Ryzen 7 5800X,
+RTX 4060 Ti, Node 20+). That's the whole dev setup; nothing exotic, nothing platform-specific
+by design.
+
+**This is not intended for macOS or Linux.** It's a standard Next.js/TypeScript/Supabase web app,
+so it may well run there unmodified — but it has never been tested on either, and no effort has
+gone into making sure it does. If you're on Mac or Linux, your best route is asking Claude (or
+another coding assistant) to adapt and verify it for your platform first — don't expect it to just
+work out of the box.
+
+**An AI connection isn't optional here — it's the actual point of the app.** Horizon is built
+around an assistant that reads and writes your data directly, through
+[MCP](https://modelcontextprotocol.io) or the built-in chat, instead of you clicking through five
+separate screens. Skip that setup and you're left with a fairly ordinary planning app. Free options
+exist (a local model via Ollama, or Google Gemini's free tier — see
+[AI provider setup](#ai-provider-setup) below), but day to day this is built around, and works
+noticeably better with, a paid Claude plan — that's what it's actually developed and used against.
+
 ## What it is
 
 - **Vision → life areas → goals/projects → tasks**, the chain RPM prescribes, as an actual data model
@@ -138,11 +158,25 @@ npx tsc --noEmit   # typecheck
 npm run build      # production build
 ```
 
-## Deployment
+## Deployment (optional)
 
-Any Next.js host works (the app targets Vercel by default — `vercel.json` configures a weekly and
-monthly cron for report generation, optional). Set the same environment variables as above on the
-host; the database setup steps are identical regardless of where the app itself runs.
+Running locally (`npm run dev`) is enough to use Horizon day to day. Deploying it gets you a
+stable URL — reachable from your phone, and from an AI assistant without your own machine needing
+to stay on. Any Next.js host works; here's the Vercel path specifically, since that's what this
+project targets by default (`vercel.json` configures optional weekly/monthly report crons).
+
+1. Push your own fork to GitHub (or use this repo directly if you're just trying it out).
+2. On [vercel.com](https://vercel.com) → **Add New → Project**, import that repo.
+3. Under **Settings → Environment Variables**, add everything from your `.env.local` — same names,
+   same values. `SUPABASE_DB_URL` isn't needed here; that one was only for the one-time
+   `npm run setup-db` step earlier.
+4. Deploy. Vercel doesn't automatically redeploy on every push unless you wire that up separately —
+   `vercel link` once locally, then `vercel --prod` from a terminal, always works too.
+5. Open your new `*.vercel.app` URL, sign up, and if you already connected an AI assistant to your
+   local instance, update its connector URL (Claude Desktop, Claude Code, MCP config) to point at
+   the deployed URL instead of `localhost:3000`.
+
+The database setup steps are identical regardless of where the app itself runs.
 
 ## Contributing
 

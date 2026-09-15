@@ -146,9 +146,3 @@ from week_items w
 where w.done = true and w.task_id is null
   and not exists (select 1 from xp_events e
                   where e.source = 'weekitem' and e.ref_id = w.id::text and e.user_id = w.user_id);
-
--- ── 7. Jordan: alles unlocked, tutorial overslaan ────────────────────────────
-update profiles
-  set onboarding_done   = true,
-      unlocked_features = array['*']
-where id = '0f94db83-d9ad-40f2-b8b0-631202af7d0e';
